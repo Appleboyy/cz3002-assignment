@@ -9,6 +9,12 @@
 	<package name="login" extends = "struts-default"> 
 		
 		<action name ="loginaction" class = "Action.LoginAction">  <!-- which action class to execute base on the URL -->
+			<result name = "success">/sindex.jsp</result>
+		
+		</action>
+		
+		
+		<action name ="login" class = "Action.TryAction">  <!-- which action class to execute base on the URL -->
 			<result name = "success">/success.jsp</result>
 			<result name = "error">/error.jsp</result>
 		

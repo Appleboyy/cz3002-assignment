@@ -1,10 +1,13 @@
 package Service;
 
 
+import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import com.mysql.cj.xdevapi.Statement;
+import java.sql.SQLException;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -17,7 +20,7 @@ public class password_service extends ActionSupport {
              
       try {
          Class.forName("com.mysql.jdbc.Driver");
-         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cz3002", "root", "Kingkhong12"); //change Kingkhong12 to your own password
+         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hope", "root", "Kingkhong12"); //change Kingkhong12 to your own password
          String sql = "SELECT name FROM login WHERE";
          sql+=" user = ? AND password = ?";
          PreparedStatement ps = conn.prepareStatement(sql);
@@ -41,5 +44,8 @@ public class password_service extends ActionSupport {
       }
       return ret;
    }
-
-}
+  
+	
+  }
+   
+   

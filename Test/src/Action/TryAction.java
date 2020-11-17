@@ -1,14 +1,9 @@
 package Action;
 
-import Service.create_database;
-import Service.create_table;
-import Service.insert_data;
 import Service.password_service;
 
-import com.opensymphony.xwork2.Action;
-
-public class LoginAction implements Action {
-	 
+public class TryAction {
+	
 	 private String user;
 	 private String password;
 	 private String name;
@@ -36,22 +31,17 @@ public class LoginAction implements Action {
 	 public void setName(String name) {
 	      this.name = name;
 	   }
-	
-	
+	 
+	 
 	 public String execute() {
 		 
-		create_database db = new create_database();
-		db.createdb();
-		
-		create_table table = new create_table();
-		table.createtable();
-		
-		insert_data data = new insert_data();
-		data.insertrec();
-		
-		
-		return "success";
-		
-	}
+			password_service pw = new password_service();
+			
+			name = pw.checking(user, password);
+			
+			if (name==null) return "error";
+			else return "success";
+			
+		}
 
 }
