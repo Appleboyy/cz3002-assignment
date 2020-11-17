@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Login Successful</h1>
+	<h1>Login Successful, <s:property value = "name"/></h1>
+	
 </body>
 </html>

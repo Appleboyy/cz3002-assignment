@@ -1,39 +1,48 @@
 package Action;
 
+import Service.password_service;
+
 import com.opensymphony.xwork2.Action;
 
 public class LoginAction implements Action {
-	
-	private String userID;
-	private String password;
-	
-	
-	public String getUserID() {
-		return userID;
-	}
+	 
+	 private String user;
+	 private String password;
+	 private String name;
 
-	public void setUserID(String userID) {
-		this.userID = userID;
-	}
+	 public String getUser() {
+	      return user;
+	   }
 
-	public String getPassword() {
-		return password;
-	}
+	 public void setUser(String user) {
+	      this.user = user;
+	   }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	 public String getPassword() {
+	      return password;
+	   }
 
+	 public void setPassword(String password) {
+	      this.password = password;
+	   }
+
+	 public String getName() {
+	      return name;
+	   }
+
+	 public void setName(String name) {
+	      this.name = name;
+	   }
 	
 	
-	public String execute() {
+	 public String execute() {
+		 
+		password_service pw = new password_service();
 		
-		if (getUserID().equals("user") && getPassword().equals("password")) {
-			
-			return "success";
-		}
+		String name = pw.checking(user, password);
 		
-		return "error";	
+		if (name==null) return "error";
+		else return "success";
 		
 	}
 
