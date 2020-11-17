@@ -39,7 +39,7 @@ public class LoginAction implements Action {
 		 
 		password_service pw = new password_service();
 		
-		String name = pw.checking(user, password);
+		name = pw.checking(user, password);
 		
 		if (name==null) return "error";
 		else return "success";

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login Successfully</title>
 </head>
 <body>
 	<h1>Login Successful, <s:property value = "name"/></h1>
