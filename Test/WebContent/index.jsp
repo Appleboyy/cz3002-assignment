@@ -8,14 +8,14 @@
 <meta charset="UTF-8">
 <title>Login Page </title>
 </head>
+
 <body>
-<s:form action = "login"> 
-<s:textfield label ="Login User ID" key = "userID" />
-<s:password label ="Password" key = "password" />
-<s:submit />
+      <form action = "loginaction" method = "post">
+         User:<br/><input type = "text" name = "user"/><br/>
+         Password:<br/><input type = "password" name = "password"/><br/>
+         <input type = "submit" value = "Login"/>		
+      </form>
+ </body>
 
-</s:form>
 
-
-</body>
 </html>

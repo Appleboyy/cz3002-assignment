@@ -30,10 +30,10 @@ public class LoginAction implements Action {
 		
 		if (getUserID().equals("user") && getPassword().equals("password")) {
 			
-			return SUCCESS;
+			return "success";
 		}
 		
-		return NONE;	
+		return "error";	
 		
 	}
 
