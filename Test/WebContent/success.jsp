@@ -4,11 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+	h1 {text-align: center;}
+</style>
 <meta charset="UTF-8">
 <title>Login Successfully</title>
 </head>
 <body>
-	<h1>Login Successful, <s:property value = "name"/></h1>
+	<h1>Successful Login, <s:property value = "name"/></h1>
 	
 </body>
 </html>

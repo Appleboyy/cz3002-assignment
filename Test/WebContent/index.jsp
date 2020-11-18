@@ -4,12 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Homepage</title>
 </head>
 <body>
 	<form action = "loginaction" method = "post">
          <input type = "submit" value = "Click me to populate Database"/>		
-     </form>
+    </form>
+    
+    <form action = "dbdone" method = "post">
+         <input type = "submit" value = "Click me if Database has alr been set up"/>		
+    </form>
 
 
 </body>

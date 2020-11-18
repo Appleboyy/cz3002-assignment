@@ -19,6 +19,13 @@
 			<result name = "error">/error.jsp</result>
 		
 		</action>
+		
+		
+		<action name ="dbdone" class = "Action.dbdone">  <!-- which action class to execute base on the URL -->
+			<result name = "success">/sindex.jsp</result>
+			
+		
+		</action>
 	 
 	</package>
 
