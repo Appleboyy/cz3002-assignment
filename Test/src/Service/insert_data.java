@@ -14,38 +14,39 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class insert_data {
 	
+	create_database db = new create_database();
+	
 	public void insertrec() {
 		   
-		  
-		  // JDBC driver name and database URL
-		   String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-		   String DB_URL = "jdbc:mysql://localhost/hope";
+		 
+		   String JDBC_DRIVER = db.getJDBC_DRIVER(); 
+		   String DB_URL = db.getDB_URL() + db.getSchema();
 
 		   //  Database credentials
-		   String USER = "root";
-		   String PASS = "Kingkhong12";
+		   String USER = db.getUSER();
+		   String PASS = db.getPASS();
 		   
 		  
 		   Connection conn = null;
 		   java.sql.Statement stmt = null;
 		   try{
-		      //STEP 2: Register JDBC driver
+		      
+			  //connect database
 		      Class.forName("com.mysql.jdbc.Driver");
-
-		      //STEP 3: Open a connection
-		     
 		      conn = DriverManager.getConnection(DB_URL, USER, PASS);
 		  
 		      
-		      //STEP 4: Execute a query
+		      //Execute a query
 		     
 		      stmt = conn.createStatement();
 		      
+		      //insert 2 set of data into the table
+		      
 		      String sql = "INSERT INTO login " +
-		                   "VALUES ('user1', 'password', 'Ali')";
+		                   "VALUES ('user1', 'password', 'Wee Ren')";
 		      stmt.executeUpdate(sql);
 		      sql = "INSERT INTO login " +
-		                   "VALUES ('user2', 'password', 'Fatma')";
+		                   "VALUES ('user2', 'password', 'Wayne')";
 		      stmt.executeUpdate(sql);
 		  
 
@@ -56,19 +57,19 @@ public class insert_data {
 		      //Handle errors for Class.forName
 		      e.printStackTrace();
 		   }finally{
-		      //finally block used to close resources
+		  
 		      try{
 		         if(stmt!=null)
 		            conn.close();
 		      }catch(SQLException se){
-		      }// do nothing
+		      }
 		      try{
 		         if(conn!=null)
 		            conn.close();
 		      }catch(SQLException se){
 		         se.printStackTrace();
-		      }//end finally try
-		   }//end try
+		      }
+		   }
 		   
-		}//end main
+		}
 }

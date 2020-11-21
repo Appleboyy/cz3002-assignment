@@ -2,7 +2,10 @@ package Action;
 
 import Service.password_service;
 
+//This Action will try to get the user and password from the database through services
+
 public class TryAction {
+	
 	
 	 private String user;
 	 private String password;

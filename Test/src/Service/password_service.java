@@ -14,13 +14,21 @@ import com.opensymphony.xwork2.ActionSupport;
 public class password_service extends ActionSupport {
 	
 
+   create_database db = new create_database();
+	
+
    public String checking(String user,String password) {
       String ret = null;
       Connection conn = null;
              
       try {
+    	
+    	 //connect database 
          Class.forName("com.mysql.jdbc.Driver");
-         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hope", "root", "Kingkhong12"); //change Kingkhong12 to your own password
+         conn = DriverManager.getConnection(db.getDB_URL()+db.getSchema(), db.getUSER(), db.getPASS());
+         
+         //Write and execute query
+         
          String sql = "SELECT name FROM login WHERE";
          sql+=" user = ? AND password = ?";
          PreparedStatement ps = conn.prepareStatement(sql);

@@ -13,32 +13,52 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class create_database {
 	
-	 public void createdb(){
-		   
-		 String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-		   String DB_URL = "jdbc:mysql://localhost/";
+	
+	
+	private String USER = "root"; //change the user accordingly
+    private String PASS = "Kingkhong12"; //change the password of the user
+    private String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+	private String DB_URL = "jdbc:mysql://localhost/";	
+	private String schema = "CZ3002_Teo_Wee_Ren"; //schema name can change if want to
+	
 
-		   //  Database credentials
-		   String USER = "root";
-		   String PASS = "Kingkhong12";
-		   
+	public String getSchema() {
+		return schema;
+	}
+
+	public String getUSER() {
+		return USER;
+	}
+	
+	public String getPASS() {
+		return PASS;
+	}
+
+	public String getJDBC_DRIVER() {
+		return JDBC_DRIVER;
+	}
+
+	public String getDB_URL() {
+		return DB_URL;
+	}
+
+	
+	 public void createdb(){   
 		   
 		   Connection conn = null;
 		   java.sql.Statement stmt = null;
 		   
 		   try{
-		      //STEP 2: Register JDBC driver
+			  
+			  //connect to the database
 		      Class.forName("com.mysql.jdbc.Driver");
-
-		      //STEP 3: Open a connection
-		  
 		      conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
-		      //STEP 4: Execute a query
+		      //Execute a query
 		
 		      stmt = conn.createStatement();
 		      
-		      String sql = "CREATE DATABASE hope";
+		      String sql = "CREATE DATABASE " + schema;
 		      stmt.executeUpdate(sql);
 		
 		   }catch(SQLException se){
@@ -48,21 +68,21 @@ public class create_database {
 		      //Handle errors for Class.forName
 		      e.printStackTrace();
 		   }finally{
-		      //finally block used to close resources
+		      
 		      try{
 		         if(stmt!=null)
 		            stmt.close();
 		      }catch(SQLException se2){
-		      }// nothing we can do
+		      }
 		      try{
 		         if(conn!=null)
 		            conn.close();
 		      }catch(SQLException se){
 		         se.printStackTrace();
-		      }//end finally try
-		   }//end try
+		      }
+		   }
 		
-		}//end main
+		}
 	   
 	
 	
