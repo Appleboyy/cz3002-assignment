@@ -1,6 +1,6 @@
 package Action;
 
-public class dbdone {
+public class DbdoneAction {
 	
 	 public String execute() {
 		 return "success";

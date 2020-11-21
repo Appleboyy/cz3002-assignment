@@ -7,7 +7,7 @@
 <title>Homepage</title>
 </head>
 <body>
-	<form action = "loginaction" method = "post">
+	<form action = "setupdb" method = "post">
          <input type = "submit" value = "Click me to populate Database"/>		
     </form>
     

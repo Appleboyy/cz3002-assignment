@@ -8,24 +8,26 @@
 	
 	<package name="login" extends = "struts-default"> 
 		
-		<action name ="loginaction" class = "Action.LoginAction">  <!-- which action class to execute base on the URL -->
-			<result name = "success">/sindex.jsp</result>
+		<action name ="setupdb" class = "Action.DbSetUpAction">  <!-- action to set up the database -->
+			<result name = "success">/loginpage.jsp</result>
+		
+		</action>
+		
+		<action name ="dbdone" class = "Action.DbdoneAction">  <!-- action when db set up alr -->
+			<result name = "success">/loginpage.jsp</result>
+			
 		
 		</action>
 		
 		
-		<action name ="login" class = "Action.TryAction">  <!-- which action class to execute base on the URL -->
+		<action name ="login" class = "Action.CheckUserInputAction">  <!-- action to check the user inputs -->
 			<result name = "success">/success.jsp</result>
 			<result name = "error">/error.jsp</result>
 		
 		</action>
 		
 		
-		<action name ="dbdone" class = "Action.dbdone">  <!-- which action class to execute base on the URL -->
-			<result name = "success">/sindex.jsp</result>
-			
 		
-		</action>
 	 
 	</package>
 

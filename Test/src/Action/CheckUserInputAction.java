@@ -4,7 +4,7 @@ import Service.password_service;
 
 //This Action will try to get the user and password from the database through services
 
-public class TryAction {
+public class CheckUserInputAction {
 	
 	
 	 private String user;

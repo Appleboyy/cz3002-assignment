@@ -9,7 +9,7 @@ import com.opensymphony.xwork2.Action;
 
 //This action will create the database, table and populate it with data.
 
-public class LoginAction implements Action {
+public class DbSetUpAction implements Action {
 	 
 	 private String user;
 	 private String password;
