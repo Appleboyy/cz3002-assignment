@@ -11,10 +11,10 @@ import java.sql.SQLException;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class password_service extends ActionSupport {
+public class Password_service extends ActionSupport {
 	
 
-   create_database db = new create_database();
+   Create_database_service db = new Create_database_service();
 	
 
    public String checking(String user,String password) {

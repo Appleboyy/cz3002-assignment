@@ -11,9 +11,9 @@ import java.sql.SQLException;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class create_table {
+public class Create_table_service {
 	
-	create_database db = new create_database();
+	Create_database_service db = new Create_database_service();
 
 	public void createtable () {
 		

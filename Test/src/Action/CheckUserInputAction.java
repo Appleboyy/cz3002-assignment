@@ -1,6 +1,6 @@
 package Action;
 
-import Service.password_service;
+import Service.Password_service;
 
 //This Action will try to get the user and password from the database through services
 
@@ -38,7 +38,7 @@ public class CheckUserInputAction {
 	 
 	 public String execute() {
 		 
-			password_service pw = new password_service();
+			Password_service pw = new Password_service();
 			
 			name = pw.checking(user, password);
 			

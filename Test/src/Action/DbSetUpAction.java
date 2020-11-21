@@ -1,9 +1,9 @@
 package Action;
 
-import Service.create_database;
-import Service.create_table;
-import Service.insert_data;
-import Service.password_service;
+import Service.Create_database_service;
+import Service.Create_table_service;
+import Service.Insert_data_service;
+import Service.Password_service;
 
 import com.opensymphony.xwork2.Action;
 
@@ -43,15 +43,15 @@ public class DbSetUpAction implements Action {
 	 public String execute() {
 		 
 		//create database
-		create_database db = new create_database();
+		Create_database_service db = new Create_database_service();
 		db.createdb();
 		
 		//create table
-		create_table table = new create_table();
+		Create_table_service table = new Create_table_service();
 		table.createtable();
 		
 		//insert data into table
-		insert_data data = new insert_data();
+		Insert_data_service data = new Insert_data_service();
 		data.insertrec();
 		
 		
